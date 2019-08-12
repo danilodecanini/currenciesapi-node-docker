@@ -8,7 +8,7 @@ API criada para obter os atuais valores do Dolar (BRL/Real) e a taxa da Selic
 
 ## Como utilizar
 - git clone
-- inserir a chave da api adquirida em https://console.hgbrasil.com
+- renomear o arquivo .env.example para .env e inserir a chave da api adquirida em https://console.hgbrasil.com e alterar os minutos para o desejado 
 - docker-compose up
 
 ## License
