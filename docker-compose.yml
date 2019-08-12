@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  server:
+    container_name: nodejs_server
+    build: '.'
+    volumes:
+      - ./:/node-app
+      - ./node_modules:/node-app/node_modules
+    environment:
+      NODE_ENV: development
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - '3333:3333'
+
+  db:
+    image: 'mongo'
+    container_name: mongodb_database
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
+    driver: local
